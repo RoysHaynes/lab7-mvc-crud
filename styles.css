@@ -1,5 +1,5 @@
 :root {
-
+    --radius:1.25rem;
 }
 
 
@@ -24,4 +24,66 @@ body {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: dodgerblue;
+    color: white;
+}
+left-side, right-side { display: block; }
+
+.badge {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: .5rem;
+    box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.15);
+}
+.toolbar {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-bottom: 0.0625rem solid gainsboro;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.75rem;
+    border: 0.0625rem solid lightgray;
+    background: whitesmoke;
+    color: black;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.btn:hover { background: lavender; }
+.bot-messages {
+    align-self: flex-start;
+    background: lightgray;
+    border-radius: var(--radius) var(--radius) var(--radius) 0.2rem;
+    max-width: 40ch;
+    padding: .5rem 1rem;
+    font-size: clamp(.5rem, 2vw, 1rem);
+}
+
+.user-messages {
+    align-self: flex-end;
+    background:dodgerblue;
+    border-radius: var(--radius) var(--radius) 0.2rem var(--radius) ;
+    color: white;
+    max-width: 40ch;
+    padding: .25rem 1rem;
+    font-size: clamp(.5rem, 2vw, 1rem);
+
 }
