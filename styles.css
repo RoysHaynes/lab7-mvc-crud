@@ -68,6 +68,20 @@ left-side, right-side { display: block; }
     cursor: pointer;
 }
 .btn:hover { background: lavender; }
+.chat-body {
+    background: white;
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    place-items: center;
+}
+
+.start.chat {
+    margin: 0;
+    padding: 1.25rem;
+    color: dimgray;
+    font-size: 1rem;
+}
 .bot-messages {
     align-self: flex-start;
     background: lightgray;
@@ -86,4 +100,33 @@ left-side, right-side { display: block; }
     padding: .25rem 1rem;
     font-size: clamp(.5rem, 2vw, 1rem);
 
+}
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 0.1rem solid lightgray;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.chat-input input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 0.1rem solid lightgray;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    background-color: whitesmoke;
+    color:black;
+}
+
+.chat-input button {
+    background: lightgray;
+    color: white;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    cursor: not-allowed;
 }
