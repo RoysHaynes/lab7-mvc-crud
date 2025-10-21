@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="container">
+    <main class="chat-container">
         <header class="header">
             <left-side>
                 <h1>Chat Application</h1>
@@ -31,9 +31,15 @@
                 <span>Clear All</span>
             </button>
         </section>
+
         <section class="chat-body" role="log" aria-live="polite" aria-relevant="additions">
-            <p class="empty" data-empty>No messages yet. Start a conversation!</p>
+            <p class="start chat">No messages yet. Start a conversation!</p>
         </section>
+
+        <form class="input-area" autocomplete="off">
+            <input type="text" placeholder="Type a message...">
+            <button type="submit">Send</button>
+        </form>
 
     </main>
 </body>
