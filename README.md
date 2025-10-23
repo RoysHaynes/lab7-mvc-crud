@@ -46,12 +46,14 @@ lab7-mvc-crud/
 - **Step 3**: Implemented observer pattern (`addObserver`, `notifyObservers`) for View notifications.
 - **Step 4**: Added Create operation (`addMessage`, `saveMessages`) to add messages and persist to `localStorage`.
 - **Step 5**: Added Read (`getMessages`), Update (`updateMessage`), and Delete (`deleteMessage`, `clearMessages`)operations for full CRUD functionality.
+- **Step 6**: Implemented `exportChat` and `importChat` for JSON-based chat history management.
+- **Step 7**: Added `lastSaved` timestamp tracking in `saveMessages` and `getLastSaved` for UI display.
 
 ## Development Progress
 - **Project Setup**: Initialized repository with `index.html`, `styles.css`, and `js/` directory structure.
 - **Eliza Integrated**: Copied `eliza.js` from Lab 6 for bot response logic.
 - **HTML/CSS Updated**: Added last saved timestamp display and temporary testing script.
-- **Model In Progress**: Implemented `model.js` up to full CRUD operations (Create, Read, Update, Delete).
+- **Model In Progress**:Implemented `model.js` with full CRUD, export/import, and timestamp tracking.
 - 
 ## License
 This project is licensed under the MIT License.

@@ -67,28 +67,6 @@ export class ChatModel{
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     saveMessages(){
         try{
             localStorage.setItem('chatMessages', JSON.stringify(this.messages));
@@ -107,6 +85,8 @@ export class ChatModel{
         }
     }
 
-
+    getLastSaved(){
+        return localStorage.getItem("lastSaved")||'-';
+    }
 
 }

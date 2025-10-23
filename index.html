@@ -47,10 +47,9 @@
         window.model = new ChatModel();
         window.model.addObserver(() => console.log('Messages:', window.model.getMessages()));
         window.model.addMessage('Test', true);
-        const id = window.model.getMessages()[0].id;
-        window.model.updateMessage(id, 'Updated');
-        window.model.deleteMessage(id);
-        window.model.addMessage('New', true);
+        const json = window.model.exportChat();
+        console.log('Exported:', json);
         window.model.clearMessages();
+        window.model.importChat(json);
     </script>
 </body>
