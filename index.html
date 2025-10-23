@@ -42,4 +42,9 @@
         </form>
 
     </main>
+    <script type="module">
+        import { ChatModel } from './js/model.js';
+        window.model = new ChatModel(); // Expose model for console testing
+        console.log('Model initialized:', window.model.message);
+    </script>
 </body>
