@@ -22,7 +22,7 @@ By the end of this lab, the application will:
 6. Provide intuitive UI with edit/delete buttons for user messages and confirmation dialogs for destructive actions.
 7. Maintain clean, semantic HTML and CSS from Lab 6, with modular JavaScript code.
 8. Demonstrate development progression through incremental Git commits.
-9. Be published to Netlify or Cloudflare with a complete README.
+
 
 ## Repository Structure
 lab7-mvc-crud/
@@ -45,11 +45,13 @@ lab7-mvc-crud/
 - **Step 2**: Added `loadMessages` to retrieve messages from `localStorage` with error handling.
 - **Step 3**: Implemented observer pattern (`addObserver`, `notifyObservers`) for View notifications.
 - **Step 4**: Added Create operation (`addMessage`, `saveMessages`) to add messages and persist to `localStorage`.
+- **Step 5**: Added Read (`getMessages`), Update (`updateMessage`), and Delete (`deleteMessage`, `clearMessages`)operations for full CRUD functionality.
+
 ## Development Progress
 - **Project Setup**: Initialized repository with `index.html`, `styles.css`, and `js/` directory structure.
 - **Eliza Integrated**: Copied `eliza.js` from Lab 6 for bot response logic.
 - **HTML/CSS Updated**: Added last saved timestamp display and temporary testing script.
-- **Model In Progress**: Implemented `model.js` up to Create operation, with message storage, localStorage loading, and observer pattern.
+- **Model In Progress**: Implemented `model.js` up to full CRUD operations (Create, Read, Update, Delete).
 - 
 ## License
 This project is licensed under the MIT License.
