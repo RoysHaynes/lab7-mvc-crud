@@ -23,25 +23,6 @@ export class ChatModel{
         this.saveMessages();
         this.notifyObservers();
     }
-
-    saveMessages(){
-        try{
-            localStorage.setItem('chatMessages', JSON.stringify(this.messages));
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    loadMessages(){
-        try{
-            const data = localStorage.getItem("chatMessages");
-            return data ? JSON.parse(data) : [];
-        }catch(error){
-            console.error(error);
-            return [];
-        }
-    }
-
     getMessages(){
         return [...this.messages];
     }
@@ -66,5 +47,66 @@ export class ChatModel{
         this.saveMessages();
         this.notifyObservers();
     }
+
+    exportChat(){
+        return JSON.stringify(this.messages,null,2);
+    }
+
+    importChat(jsonData){
+        try{
+            const messages = JSON.parse(jsonData);
+            if (!Array.isArray(messages) || !messages.every(msg => msg.id && msg.text && typeof msg.isUser === 'boolean')) {
+                throw new Error('Invalid chat data format');
+            }
+            this.messages = messages;
+            this.saveMessages();
+            this.notifyObservers();
+        } catch(error){
+            console.error(error);
+            throw error;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    saveMessages(){
+        try{
+            localStorage.setItem('chatMessages', JSON.stringify(this.messages));
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    loadMessages(){
+        try{
+            const data = localStorage.getItem("chatMessages");
+            return data ? JSON.parse(data) : [];
+        }catch(error){
+            console.error(error);
+            return [];
+        }
+    }
+
+
 
 }
