@@ -45,6 +45,7 @@
     <script type="module">
         import { ChatModel } from './js/model.js';
         window.model = new ChatModel(); // Expose model for console testing
-        console.log('Model initialized:', window.model.message);
+        console.log('Messages', window.model.message);
+        localStorage.setItem('chatMessages', JSON.stringify([{ id: '1', text: 'Test', isUser: true, timestamp: new Date().toISOString(), edited: false }]));
     </script>
 </body>
