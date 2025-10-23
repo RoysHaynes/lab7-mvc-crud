@@ -45,7 +45,12 @@
     <script type="module">
         import { ChatModel } from './js/model.js';
         window.model = new ChatModel();
-        model.addObserver(() => console.log('Messages:', model.messages));
-        model.addMessage('Hello', true);
+        window.model.addObserver(() => console.log('Messages:', window.model.getMessages()));
+        window.model.addMessage('Test', true);
+        const id = window.model.getMessages()[0].id;
+        window.model.updateMessage(id, 'Updated');
+        window.model.deleteMessage(id);
+        window.model.addMessage('New', true);
+        window.model.clearMessages();
     </script>
 </body>

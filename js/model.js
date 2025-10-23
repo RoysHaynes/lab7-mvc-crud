@@ -32,7 +32,6 @@ export class ChatModel{
         }
     }
 
-
     loadMessages(){
         try{
             const data = localStorage.getItem("chatMessages");
@@ -41,6 +40,31 @@ export class ChatModel{
             console.error(error);
             return [];
         }
+    }
+
+    getMessages(){
+        return [...this.messages];
+    }
+
+    updateMessage(id,newText){
+        const message = this.messages.find(msg => msg.id === id);
+        if(message&& message.isUser){
+            message.text = newText;
+            message.edited = true;
+            this.saveMessages();
+            this.notifyObservers();
+        }
+    }
+
+    deleteMessage(id){
+        this.messages= this.messages.filter(msg => msg.id !== id);
+        this.saveMessages();
+        this.notifyObservers();
+    }
+    clearMessages(){
+        this.messages = [];
+        this.saveMessages();
+        this.notifyObservers();
     }
 
 }
