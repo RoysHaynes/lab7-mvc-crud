@@ -1,6 +1,7 @@
 export class ChatModel{
     constructor(){
-        this.message=[];
+        this.messages=this.loadMessages();
+        this.observers=[];
     }
     loadMessages(){
         try{
@@ -10,5 +11,12 @@ export class ChatModel{
             console.error(error);
             return [];
         }
+    }
+    addObserver(callback){
+        this.observers.push(callback);
+    }
+
+    notifyObservers(){
+        this.observers.forEach(callback => callback());
     }
 }

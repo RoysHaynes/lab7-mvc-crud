@@ -44,8 +44,9 @@
     </main>
     <script type="module">
         import { ChatModel } from './js/model.js';
-        window.model = new ChatModel(); // Expose model for console testing
-        console.log('Messages', window.model.message);
-        localStorage.setItem('chatMessages', JSON.stringify([{ id: '1', text: 'Test', isUser: true, timestamp: new Date().toISOString(), edited: false }]));
+        window.model = new ChatModel();
+        model.addObserver(() => console.log('Data changed!'));
+        model.notifyObservers();
+        console.log('Messages:', model.messages);
     </script>
 </body>
