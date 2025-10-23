@@ -45,8 +45,7 @@
     <script type="module">
         import { ChatModel } from './js/model.js';
         window.model = new ChatModel();
-        model.addObserver(() => console.log('Data changed!'));
-        model.notifyObservers();
-        console.log('Messages:', model.messages);
+        model.addObserver(() => console.log('Messages:', model.messages));
+        model.addMessage('Hello', true);
     </script>
 </body>
