@@ -26,9 +26,9 @@ export class ChatView{
         messages.forEach(function(message){
             let messageEl = document.createElement("article");
             if(message.isUser){
-                messageEl.classList.add("user-message");
+                messageEl.classList.add("user-messages");
             }else{
-                messageEl.classList.add("bot-message");
+                messageEl.classList.add("bot-messages");
             }
             messageEl.setAttribute("data-message-id", message.id);
             messageEl.innerHTML = `
