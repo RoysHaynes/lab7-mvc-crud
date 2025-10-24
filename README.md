@@ -1,7 +1,11 @@
 # Lab 7: MVC Chat Application with CRUD Operations
 
 ## Overview
-This lab builds on Lab 6’s chat application by refactoring it into the **Model-View-Controller (MVC)** architectural pattern and adding **CRUD (Create, Read, Update, Delete)** operations for data management. The application uses `localStorage` for client-side persistence and includes features like chat history export/import. The goal is to create a maintainable, scalable chat interface that separates concerns between data (Model), presentation (View), and business logic (Controller), preparing for future enhancements like REST API integration.
+This lab builds on Lab 6’s chat application by refactoring it into the **Model-View-Controller (MVC)** architectural pattern and 
+adding **CRUD (Create, Read, Update, Delete)** operations for data management. The application uses `localStorage` for client-side 
+persistence and includes features like chat history export/import. The goal is to create a maintainable, scalable chat interface 
+that separates concerns between data (Model), presentation (View), and business logic (Controller), preparing for future enhancements 
+like REST API integration.
 
 **Project Link**: [To be added after publishing]
 
@@ -52,8 +56,8 @@ lab7-mvc-crud/
 ## Development Progress
 - **Project Setup**: Initialized repository with `index.html`, `styles.css`, and `js/` directory structure.
 - **Eliza Integrated**: Copied `eliza.js` from Lab 6 for bot response logic.
-- **HTML/CSS Updated**: Added last saved timestamp display and temporary testing script.
-- **Model In Progress**:Implemented `model.js` with full CRUD, export/import, and timestamp tracking.
+- **HTML/CSS**: Built out the base HTML and CSS to look like completed project,
+- **Model.js**:Implemented `model.js` with full CRUD, export/import, and timestamp tracking.
 - 
 ## License
 This project is licensed under the MIT License.
