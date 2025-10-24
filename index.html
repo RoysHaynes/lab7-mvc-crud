@@ -42,13 +42,5 @@
         </form>
 
     </main>
-    <script type="module">
-        import { ChatModel } from './src/js/model.js';
-        import { ChatView } from './src/js/view.js';
-        let model = new ChatModel();
-        let view = new ChatView();
-        view.init(model);
-        model.addMessage('User message', true);
-        model.addMessage('Bot reply', false);
-    </script>
+    <script type="module" src="./src/js/app.js"></script>
 </body>
