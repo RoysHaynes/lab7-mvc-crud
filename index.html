@@ -33,7 +33,7 @@
         </section>
 
         <section class="chat-body" role="log" aria-live="polite" aria-relevant="additions">
-            <p class="start chat">No messages yet. Start a conversation!</p>
+            <p class="start-chat">No messages yet. Start a conversation!</p>
         </section>
 
         <form class="chat-input" autocomplete="off">
@@ -43,13 +43,11 @@
 
     </main>
     <script type="module">
-        import { ChatModel } from './js/model.js';
-        window.model = new ChatModel();
-        window.model.addObserver(() => console.log('Messages:', window.model.getMessages()));
-        window.model.addMessage('Test', true);
-        const json = window.model.exportChat();
-        console.log('Exported:', json);
-        window.model.clearMessages();
-        window.model.importChat(json);
+        import { ChatModel } from './src/js/model.js';
+        import { ChatView } from './src/js/view.js';
+        let model = new ChatModel();
+        let view = new ChatView();
+        view.init(model);
+        model.addMessage('Test message', true);
     </script>
 </body>
