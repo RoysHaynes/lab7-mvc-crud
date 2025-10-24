@@ -33,7 +33,6 @@ export class ChatView{
             messageEl.setAttribute("data-message-id", message.id);
             messageEl.innerHTML = `
                 <p>${message.text}</p>
-                <small>${new Date(Number(message.timestamp)).toLocaleTimeString()}</small>
                 ${message.edited ? '<small>(edited)</small>' : ''}
                 ${message.isUser ? `
                     <button class="btn edit-btn" data-action="edit" data-message-id="${message.id}">Edit</button>
