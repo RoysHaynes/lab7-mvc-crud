@@ -49,16 +49,40 @@ lab7-mvc-crud/
 - **Step 2**: Added `loadMessages` to retrieve messages from `localStorage` with error handling.
 - **Step 3**: Implemented observer pattern (`addObserver`, `notifyObservers`) for View notifications.
 - **Step 4**: Added Create operation (`addMessage`, `saveMessages`) to add messages and persist to `localStorage`.
-- **Step 5**: Added Read (`getMessages`), Update (`updateMessage`), and Delete (`deleteMessage`, `clearMessages`)operations for full CRUD functionality.
+- **Step 5**: Added Read (`getMessages`), Update (`updateMessage`), and Delete (`deleteMessage`, `clearMessages`) operations for full CRUD functionality.
 - **Step 6**: Implemented `exportChat` and `importChat` for JSON-based chat history management.
 - **Step 7**: Added `lastSaved` timestamp tracking in `saveMessages` and `getLastSaved` for UI display.
+
+### View (`view.js`)
+- **Step 1**: Initialized the `ChatView` class with nine variables for DOM elements (chat body, message count, empty state, form, input, export/import/clear buttons, model) and set up an `init` method with a placeholder `render` function to log messages for testing.
+- **Step 2**: Added basic rendering using semantic `<article>` tags to display user and bot messages with timestamps and edited flags, replacing initial `<div>` tags per professor feedback.
+- **Step 3**: Implemented dynamic message count display and empty state toggling ("No messages yet") based on the number of messages.
+- **Step 4**: Added "Edit" and "Delete" buttons for user messages, using `data-message-id` and `data-action` attributes for future CRUD actions.
+- **Step 5**: Integrated auto-scroll functionality to keep the latest message in view, completing the View with all required UI features.
+- **Step 6**: Fixed a selector mismatch by updating `emptyState` from `.start.chat` to `.start-chat` to match `index.html`, resolving a `null` error during rendering.
+
+### Controller (`controller.js`)
+- **Step 1**: Initialized the `ChatController` class with references to the model, view, form, and input elements, setting up a basic `init` method structure.
+- **Step 2**: Added a form submission event listener to prevent page reloads with `event.preventDefault()`, trim input text, and add user messages to the model if non-empty.
+- **Step 3**: Integrated `eliza.js` by importing `getBotResponse` and adding bot reply logic after each user message, enhancing interactivity.
+- **Step 4**: (Placeholder) Planned to add event listeners for edit and delete button clicks to support Update and Delete operations (to be implemented).
+- **Step 5**: (Placeholder) Planned to implement export, import, and clear functionality using model methods (to be implemented).
+
+### App (`app.js`)
+- **Step 1**: Created the `app.js` file and imported all MVC components (`ChatModel`, `ChatView`, `ChatController`) and `eliza.js` for bot responses.
+- **Step 2**: Defined the `initApp` function to instantiate the model, view, and controller, and initialize the view with the model for observer pattern setup.
+- **Step 3**: Added a `window.addEventListener('load', initApp)` to ensure the application starts only after the DOM is fully loaded, centralizing initialization.
+-**Step 4**: Integrated `app.js` into `index.html` by updating the script tag to load it, removing inline test cases (`model.addMessage()`) for user-driven interaction.
 
 ## Development Progress
 - **Project Setup**: Initialized repository with `index.html`, `styles.css`, and `js/` directory structure.
 - **Eliza Integrated**: Copied `eliza.js` from Lab 6 for bot response logic.
 - **HTML/CSS**: Built out the base HTML and CSS to look like completed project,
 - **Model.js**:Implemented `model.js` with full CRUD, export/import, and timestamp tracking.
-- 
+- **View.js**: Implemented `view.js` to render messages, buttons, count. Assigns classes to messages for CSS labeling
+- **Controller.js**: Added `controller.js` to handle form submission, preventing page reloads, and integrating `eliza.js` for bot responses.
+- **App.js**: Created `app.js` to centralize MVC component initialization, updating `index.html` to load it and removing inline test cases for user-driven interaction.
+- **Bug Fixes**: Resolved CSS loading issues by verifying `styles.css` path, fixed `view.js` DOM selector mismatches, and ensured proper module imports.
 ## License
 This project is licensed under the MIT License.
 
